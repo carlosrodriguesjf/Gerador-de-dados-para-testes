@@ -2,6 +2,7 @@
 
 # Importação de bibliotecas
 import random
+import os
 
 
 # Criar uma lista de 5 nomes, 5 e-mail, 5 telefones, 5 cidades e 5 estados
@@ -44,8 +45,8 @@ def selecao5():
     print(100*'-')
 
 def cria_arquivo(dado):
-    with open('dados.txt','w',newline='',encoding='utf-8') as arquivo:
-        arquivo.write(dado)
+    with open('dados.txt','a',newline='',encoding='utf-8') as arquivo:
+        arquivo.write(dado+os.linesep)
 
 
 
@@ -69,28 +70,35 @@ while True:
     salvar_em_arquivo = input('Gostaria de salvar os dados em um arquivo de texto? (s/n) ')
     if salvar_em_arquivo == 's':
         print('Arquivo salvo')
-
     print('')
     print('')
-
     
     # Criando a lógica para exibir o nome aleatorio
     if selecao_do_usuario == '1':
         nome = selecao1()
         print(nome)
-        cria_arquivo(nome)
+        if salvar_em_arquivo == 's':
+            cria_arquivo(nome)
     if selecao_do_usuario == '2':
         email = selecao2()
         print(email)
+        if salvar_em_arquivo == 's':
+            cria_arquivo(email)
     if selecao_do_usuario == '3':
         telefone = selecao3()
         print(telefone)
+        if salvar_em_arquivo == 's':
+            cria_arquivo(telefone)
     if selecao_do_usuario == '4':
         cidade = selecao4()
         print(cidade)
+        if salvar_em_arquivo == 's':
+            cria_arquivo(cidade)
     if selecao_do_usuario == '5':
         estado = selecao5()
         print(estado)
+        if salvar_em_arquivo == 's':
+            cria_arquivo(estado)
     
 
 
