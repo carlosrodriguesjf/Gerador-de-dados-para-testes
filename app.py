@@ -4,19 +4,6 @@
 import random
 import os
 
-
-# Criar uma lista de 5 nomes, 5 e-mail, 5 telefones, 5 cidades e 5 estados
-nomes = ['Maripilda', 'Leopoldo', 'Ariosvaldo', 'Edileuza', 'Josefina']
-emails = ['mari@gmail.com','leo@gmail.com','valdo@gmail.com','leuza@gmail.com','jose@gmail.com']
-telefone = ['98809-8978','98874-5874','98475-85740','98874-8528','99987-5823']
-cidade = ['Juiz de Fora','Volta Redonda','Fortaleza','Curitiba','Florianopolis']
-estado =['MG','RJ','CE','PR','SC']
-
-
-# Criação das variáveis do programa
-selecao_do_usuario = 0
-salvar_em_arquivo = 0
-
 # Criando funções para cada ação que será escolhida
 
 def selecao1():
@@ -51,6 +38,21 @@ def cria_arquivo(dado):
 
 
 while True:
+
+# Criar uma lista de 5 nomes, 5 e-mail, 5 telefones, 5 cidades e 5 estados
+    nomes = ['Maripilda', 'Leopoldo', 'Ariosvaldo', 'Edileuza', 'Josefina']
+    emails = ['mari@gmail.com','leo@gmail.com','valdo@gmail.com','leuza@gmail.com','jose@gmail.com']
+    telefone = ["98809-8978","98874-5874","98475-85740","98874-8528","99987-5823"]
+    cidade = ['Juiz de Fora','Volta Redonda','Fortaleza','Curitiba','Florianopolis']
+    estado =['MG','RJ','CE','PR','SC']
+
+
+# Criação das variáveis do programa
+    selecao_do_usuario = 0
+    salvar_em_arquivo = 0
+    # i = 0
+
+
 # Criação o menu inicial
     print('Bem-vindo ao Gerador de Dados de Testes - Para finalizar o programa, digite "parar"')
     print(100*'-')
@@ -69,53 +71,37 @@ while True:
     # Criar lógica para salvar os dados em um arquivo de texto
     salvar_em_arquivo = input('Gostaria de salvar os dados em um arquivo de texto? (s/n) ')
     if salvar_em_arquivo == 's':
-        print('Arquivo salvo')
-    print('')
-    print('')
-    
+        print('')
+       
+    for i in selecao_do_usuario:
     # Criando a lógica para exibir o nome aleatorio
-    if selecao_do_usuario == '1':
-        nome = selecao1()
-        print(nome)
-        if salvar_em_arquivo == 's':
-            cria_arquivo(nome)
-    if selecao_do_usuario == '2':
-        email = selecao2()
-        print(email)
-        if salvar_em_arquivo == 's':
-            cria_arquivo(email)
-    if selecao_do_usuario == '3':
-        telefone = selecao3()
-        print(telefone)
-        if salvar_em_arquivo == 's':
-            cria_arquivo(telefone)
-    if selecao_do_usuario == '4':
-        cidade = selecao4()
-        print(cidade)
-        if salvar_em_arquivo == 's':
-            cria_arquivo(cidade)
-    if selecao_do_usuario == '5':
-        estado = selecao5()
-        print(estado)
-        if salvar_em_arquivo == 's':
-            cria_arquivo(estado)
+        if i == '1':
+            nome = selecao1()
+            print(nome)
+            if salvar_em_arquivo == 's':
+                cria_arquivo(nome)
+        if i == '2':
+            email = selecao2()
+            print(email)
+            if salvar_em_arquivo == 's':
+                cria_arquivo(email)
+        if i == '3':
+            telefone = selecao3()
+            print(telefone)
+            if salvar_em_arquivo == 's':
+                cria_arquivo(telefone)
+        if i == '4':
+            cidade = selecao4()
+            print(cidade)
+            if salvar_em_arquivo == 's':
+                cria_arquivo(cidade)
+        if i == '5':
+            estado = selecao5()
+            print(estado)
+            if salvar_em_arquivo == 's':
+                cria_arquivo(estado)
     
-
+    print(100*'-')
 
 print('Encerrando o programa')
 print('')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Criar lógica para parar o programa
